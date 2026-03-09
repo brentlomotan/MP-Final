@@ -25,6 +25,9 @@ namespace GROUP01_MP_Mockup.Pages.Auth
             {
                 lblLoginMessage.Visible = true;
             }
+
+            txtUsername.Text = "";
+            txtPassword.Text = "";
         }
     }
 }

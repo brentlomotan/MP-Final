@@ -7,43 +7,55 @@
     }
 
     main {
+        margin-top: 60px;
         position: relative;
         z-index: 1;
         background: #F7F8F0;
     }
 
     .container {
-        padding: 2rem;
+        padding: 0rem;
         flex: 1;
     }
 
     .slider-wrapper {
         position: relative;
-        max-width: 48rem;
-        margin: 0 auto;
+        
+        width: 100%;
+    }
+
+
+    @keyframes bannerChange{
+        0%, 45% {transform: translateX(0%);}
+        50%, 95% {transform: translateX(-100%);}
+        100% {transform: translateX(0%);}
     }
 
     .slider {
         display: flex;
-        aspect-ratio: 21/12;
-        overflow-x: auto;
+        
+        height: 500px;
+        overflow-x: hidden; 
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-        border-radius: 0.5rem;
-        object-position: center 30%;
+        border-radius: 0rem;
+        object-position: center top;
         scrollbar-width: none;
+        width: 100%;
+        min-width: 100%;
     }
 
     .slider::-webkit-scrollbar { 
         display: none; }
 
-    .slider img {
-        flex: 1 0 100%;
-        scroll-snap-align: start;
-        object-fit: fill;
-        width: 48rem;
-    }
+        .slider img {
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            object-fit: cover;
+            width: 100%;
+            animation: bannerChange 20s infinite ease-in-out;
+        }
 
     .slider-nav {
         display: flex;
@@ -85,13 +97,15 @@
         text-align: center;
     }
 
-  .footer-name {
-    font-style: italic;
-    font-size: 1.5rem;
-    margin: 0;
-    position: sticky;
-    top: 15rem;
-}
+    .footer-name {
+        font-style: italic;
+        font-size: 1.5rem;
+        margin: 0;
+        position: sticky;
+        top: 15rem;
+
+      
+    }
 
     .footer-bio {
         font-style: oblique;
@@ -114,11 +128,17 @@
         <div class="slider-wrapper">
             <div class="slider">
                 <img id="slide-1" src="https://images.unsplash.com/photo-1468581264429-2548ef9eb732?q=80&w=1470&auto=format&fit=crop" alt="Ocean"/>
-                <img id="slide-2" src="https://images.unsplash.com/photo-1533077162801-86490c593afb?q=80&w=1074&auto=format&fit=crop" alt="Water"/>
+                <img id="slide-2" src="https://images.unsplash.com/photo-1460501501851-d5946a18e552?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Water"/>
+                <img id="slide-3" src="https://images.unsplash.com/photo-1610891015188-5369212db097?q=80&w=1829&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Factory" />
+                <img id="slide-4" src="https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="More Factory" />
+                <img id ="slide-5" src="https://images.unsplash.com/photo-1669991504272-19c28fd98c15?q=80&w=1522&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Philippines" />
             </div>
             <div class="slider-nav">
                 <a href="#slide-1"></a>
                 <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+                <a href="#slide-4"></a>
+                <a href="#slide-5"></a>
             </div>
         </div>
     </section>

@@ -140,7 +140,7 @@
         line-height: 1.7;
         max-width: 32rem;
         margin: 0 0 3rem 0;
-        border-left: 3px solid #7AAACE;
+        border-left: 3px solid #F7F8F0;
         padding-left: 1rem;
     }
 
@@ -194,7 +194,7 @@
 
     .footer-copy {
         font-size: 0.75rem;
-        color: rgba(247, 248, 240, 0.35);
+        color: #F7F8F0;
         margin: 0;
     }
 

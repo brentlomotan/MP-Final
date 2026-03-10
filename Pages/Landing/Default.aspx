@@ -1,4 +1,7 @@
-﻿<style>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="GROUP01_MP_Mockup.Pages.Landing.Default" %>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
+<style>
     body {
         background: #F7F8F0;
         display: flex;
@@ -124,13 +127,22 @@
         margin-bottom: 20rem;
     }
 
+        @keyframes popName{
+    0%, 100% {opacity;}
+
+    
+}
+
     .footer-name {
         font-style: italic;
         font-size: 1.5rem;
         margin: 0;
         position: sticky;
-        top: 15rem;
+        top: 30rem;
+        animation: popName 10s ease-out infinite;
     }
+
+     
 
     .footer-bio {
         font-style: oblique;
@@ -140,7 +152,9 @@
         margin-top: 5rem;
         text-align: center;
         margin-left: -1rem;
-        position: sticky;
+        margin-top: 30rem;
+        
+        
     }
 
     .footer-moreofus {
@@ -269,3 +283,4 @@
     </div>
 
 </footer>
+</asp:Content>

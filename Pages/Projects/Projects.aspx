@@ -281,7 +281,7 @@
   <div class="proj-stat"><span class="proj-stat-value">$6.7B</span><span class="proj-stat-label">Total Budget</span></div>
 </div>
 
-<!--FILTERS + GRID-->
+<!--FILTERS+GRID-->
 <div style="padding: 0 12vw;">
 
   <div class="proj-filters">

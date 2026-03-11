@@ -177,6 +177,187 @@
             transition: 0.3s;
         }
 
+        /* ── PROFILE DROPDOWN ── */
+        .profile-wrapper {
+            position: relative;
+        }
+
+        .profile-trigger {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .profile-trigger:hover {
+            background: #e8eee8;
+        }
+
+        .profile-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid #7AAACE;
+            background: #7AAACE;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-avatar img {
+            width: 75%;
+            height: 75%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-username {
+            font-weight: 600;
+            font-size: 15px;
+            color: #355872;
+            max-width: 140px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .profile-chevron {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: #355872;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .profile-wrapper.open .profile-chevron {
+            transform: rotate(180deg);
+        }
+
+        /* DROPDOWN MENU */
+        .profile-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            min-width: 210px;
+            background: #F7F8F0;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(53, 88, 114, 0.18);
+            overflow: hidden;
+            z-index: 100;
+            animation: dropdownFade 0.2s ease;
+        }
+
+        .profile-wrapper.open .profile-dropdown {
+            display: block;
+        }
+
+        @keyframes dropdownFade {
+            from { opacity: 0; transform: translateY(-6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* DROPDOWN HEADER (user info) */
+        .dropdown-user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 16px;
+            border-bottom: 1px solid #dde8f0;
+            pointer-events: none;
+        }
+
+        .dropdown-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #7AAACE;
+            border: 2px solid #7AAACE;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dropdown-avatar svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        .dropdown-username-text {
+            font-weight: 700;
+            font-size: 14px;
+            color: #355872;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .dropdown-username-label {
+            font-size: 11px;
+            color: #7a9bb5;
+            margin-top: 2px;
+        }
+
+        /* DROPDOWN ITEMS */
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #355872;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.15s;
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .dropdown-item:hover {
+            background: #e4eef7;
+        }
+
+        .dropdown-item svg {
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+            stroke: #7AAACE;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .dropdown-item.logout {
+            color: #c0392b;
+            border-top: 1px solid #dde8f0;
+        }
+
+        .dropdown-item.logout svg {
+            stroke: #c0392b;
+        }
+
+        .dropdown-item.logout:hover {
+            background: #fdecea;
+        }
+
         /* PAGE CONTENT */
         .content {
             padding: 30px;
@@ -213,9 +394,62 @@
 
             <!-- RIGHT SIDE - NAVIGATION -->
             <div class="nav-right">
-                <a class="login-btn" runat="server" href="~/Pages/Auth/Login.aspx">
-                    Login
-                </a>
+                <asp:Panel ID="pnlLogin" runat="server" Visible="true">
+                    <a class="login-btn" runat="server" href="~/Pages/Auth/Login.aspx">
+                        Login
+                    </a>
+                </asp:Panel>
+
+                <asp:Panel ID="pnlProfile" runat="server" Visible="false">
+                    <div class="profile-wrapper" id="profileWrapper">
+
+                        <div class="profile-trigger" onclick="toggleProfileDropdown()">
+
+                            <div class="profile-avatar">
+                                <asp:Image ID="ProfileImage" runat="server"
+                                    ImageUrl="~/Images/Avatar.png"
+                                    AlternateText="Profile Photo" />
+                            </div>
+
+                            <asp:Label ID="lblUsername" runat="server"
+                                CssClass="profile-username"
+                                Text="Username" />
+
+                            <svg class="profile-chevron" viewBox="0 0 24 24">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+
+                        <div class="profile-dropdown" id="profileDropdown">
+
+                            <div class="dropdown-user-info">
+                                <div class="dropdown-avatar">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="dropdown-username-text">
+                                        <asp:Label ID="lblDropdownUsername" runat="server" Text="Username" />
+                                    </div>
+                                    <div class="dropdown-username-label">Signed in</div>
+                                </div>
+                            </div>
+
+                            <asp:LinkButton ID="btnLogout" runat="server"
+                                CssClass="dropdown-item logout"
+                                OnClick="btnLogout_Click">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>
+                                Logout
+                            </asp:LinkButton>
+
+                        </div>
+                    </div>
+                </asp:Panel>
             </div>
         </div>
 
@@ -225,5 +459,20 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+
+    <script>
+        function toggleProfileDropdown() {
+            var wrapper = document.getElementById('profileWrapper');
+            if (wrapper) wrapper.classList.toggle('open');
+        }
+
+        // Close when clicking anywhere outside the wrapper
+        document.addEventListener('click', function (e) {
+            var wrapper = document.getElementById('profileWrapper');
+            if (wrapper && !wrapper.contains(e.target)) {
+                wrapper.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>

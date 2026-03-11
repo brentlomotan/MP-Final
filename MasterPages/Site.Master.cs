@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Antlr.Runtime.Tree;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,6 +23,27 @@ namespace GROUP01_MP_Mockup
             {
                 ProjectsTab.Attributes["class"] += " active";
             }
+
+            if (Session["User"] != null)
+            {
+                pnlLogin.Visible = false;
+                pnlProfile.Visible = true;
+
+                string username = Session["User"].ToString();
+                lblUsername.Text = username;
+                lblDropdownUsername.Text = username;
+            }
+            else
+            {
+                pnlLogin.Visible = true;
+                pnlProfile.Visible = false;
+            }
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

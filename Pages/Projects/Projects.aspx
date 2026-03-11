@@ -3,11 +3,11 @@
 
 <style>
   :root {
-    --navy: #0f1f3d;
-    --navy-light: #162848;
-    --teal: #0d7a5a;
-    --teal-light: #14b88a;
-    --gray-bg: #f3f4f6;
+    --navy: #355872;
+    --navy-light: #7AAACE;
+    --green: #0d7a5a;
+    --green-light: #14b88a;
+    --gray-bg: #F7F8F0;
     --gray-border: #e5e7eb;
     --gray-text: #6b7280;
     --body-text: #374151;
@@ -72,12 +72,12 @@
     font-family: Georgia, serif;
     font-style: italic;
     font-size: 24px;
-    color: var(--teal-light);
+    color: #355872;
   }
   .proj-stat-label {
     font-family: Verdana, sans-serif;
     font-size: 12px;
-    color: #9db4cc;
+    color: #355872;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     font-style: oblique;
@@ -103,10 +103,10 @@
     cursor: pointer;
     transition: all 0.2s;
   }
-  .proj-filter-btn:hover { border-color: var(--teal); color: var(--teal); }
+  .proj-filter-btn:hover { border-color: var(--green); color: var(--green); }
   .proj-filter-btn.active {
-    background: var(--teal);
-    border-color: var(--teal);
+    background: var(--green);
+    border-color: var(--green);
     color: #fff;
   }
 
@@ -121,7 +121,7 @@
 
   /*CARDS*/
   .proj-card {
-    background: #fff;
+    background: #F7F8F0;
     border: 1px solid var(--gray-border);
     border-radius: 14px;
     padding: 28px;
@@ -151,7 +151,7 @@
     padding: 3px 11px;
     border-radius: 6px;
   }
-  .proj-badge-active   { background: var(--teal); color: #fff; }
+  .proj-badge-active   { background: var(--green); color: #fff; }
   .proj-badge-planning { background: #6b7280;     color: #fff; }
   .proj-badge-done     { background: #1a6fa0;     color: #fff; }
   .proj-badge-cat { font-weight: 500; }
@@ -192,7 +192,7 @@
   }
   .proj-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--teal), var(--teal-light));
+    background: linear-gradient(90deg, var(--green), var(--green-light));
     border-radius: 99px;
     transition: width 1s cubic-bezier(0.4,0,0.2,1);
     width: 0;
@@ -210,7 +210,7 @@
     transition: color 0.2s, transform 0.25s;
     line-height: 1;
   }
-  .proj-toggle-btn:hover { color: var(--teal); }
+  .proj-toggle-btn:hover { color: var(--green); }
   .proj-toggle-btn.open { transform: rotate(180deg); }
 
   /*DETAILS*/
@@ -247,13 +247,13 @@
   .proj-view-link {
     font-family: Verdana, sans-serif;
     font-size: 13px;
-    color: var(--teal);
+    color: var(--green);
     text-decoration: none;
     font-weight: 600;
     align-self: flex-start;
     transition: color 0.2s;
   }
-  .proj-view-link:hover { color: var(--teal-light); }
+  .proj-view-link:hover { color: var(--green-light); }
   /*ANIMATIONS*/
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }

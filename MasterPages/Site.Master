@@ -444,13 +444,13 @@
                     <a id="HomeTab" runat="server" href="~/Pages/Landing/Default.aspx" class="bar-item">
                         <div class="bar-fluid"></div>
                         <div class="drop"></div>
-                        <span>Home</span>
+                        <span id="HomeTabText" runat="server">Home</span>
                     </a>
 
                     <a id="ProjectsTab" runat="server" href="~/Pages/Projects/Projects.aspx" class="bar-item">
                         <div class="bar-fluid"></div>
                         <div class="drop"></div>
-                        <span>Projects</span>
+                        <span id="ProjectsTabText" runat="server">Projects</span>
                     </a>
                 </div>
             </div>
@@ -514,13 +514,13 @@
 
                             <!-- SHARED SETTINGS -->
                             <!-- INSERT SETTINGS LINK HERE -->
-                            <a href="#" class="dropdown-item">
+                            <asp:LinkButton class="dropdown-item" id="SettingsButton" onclick="btnSettings_Click" runat="server">
                                 <svg viewBox="0 0 24 24">
                                     <circle cx="12" cy="12" r="3"></circle>
                                     <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
                                 </svg>
-                                Settings
-                            </a>
+                                Profile Settings
+                            </asp:LinkButton>
 
                             <asp:LinkButton ID="btnLogout" runat="server"
                                 CssClass="dropdown-item logout"

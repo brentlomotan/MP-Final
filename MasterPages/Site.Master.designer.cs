@@ -33,6 +33,15 @@ namespace GROUP01_MP_Mockup
         protected global::System.Web.UI.HtmlControls.HtmlAnchor HomeTab;
 
         /// <summary>
+        /// HomeTabText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl HomeTabText;
+
+        /// <summary>
         /// ProjectsTab control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace GROUP01_MP_Mockup
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor ProjectsTab;
+
+        /// <summary>
+        /// ProjectsTabText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProjectsTabText;
 
         /// <summary>
         /// pnlLogin control.
@@ -94,6 +112,15 @@ namespace GROUP01_MP_Mockup
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlUserLinks;
+
+        /// <summary>
+        /// SettingsButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SettingsButton;
 
         /// <summary>
         /// btnLogout control.

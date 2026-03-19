@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Admin Panel" Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="AdminPanel.aspx.cs" Inherits="GROUP01_MP_Mockup.Pages.Admin.AdminPanel"%>
+﻿<%@ Page Title="Full Area Analytics" Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="FullAreaAnalytics.aspx.cs" Inherits="GROUP01_MP_Mockup.Pages.Admin.FullAreaAnalytics" %>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <style>

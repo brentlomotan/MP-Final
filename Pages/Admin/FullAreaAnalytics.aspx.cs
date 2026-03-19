@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing.Printing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace GROUP01_MP_Mockup.Pages.Admin
 {
-    public partial class AdminPanel : System.Web.UI.Page
+    public partial class FullAreaAnalytics : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
- 
+
         }
     }
 }

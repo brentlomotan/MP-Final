@@ -123,6 +123,8 @@
     <Content Include="Images\LogoFull.png" />
     <Content Include="Images\ProjectDetailsBanner.png" />
     <Content Include="Pages\Admin\AdminPanel.aspx" />
+    <Content Include="Pages\Admin\FullAreaAnalytics.aspx" />
+    <Content Include="Pages\Admin\AdminProfilePage.aspx" />
     <Content Include="Pages\Auth\Signup.aspx" />
     <Content Include="Pages\Landing\Default.aspx" />
     <Content Include="favicon.ico" />
@@ -215,6 +217,20 @@
     </Compile>
     <Compile Include="Pages\Admin\AdminPanel.aspx.designer.cs">
       <DependentUpon>AdminPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\FullAreaAnalytics.aspx.cs">
+      <DependentUpon>FullAreaAnalytics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\FullAreaAnalytics.aspx.designer.cs">
+      <DependentUpon>FullAreaAnalytics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\AdminProfilePage.aspx.cs">
+      <DependentUpon>AdminProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\AdminProfilePage.aspx.designer.cs">
+      <DependentUpon>AdminProfilePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Auth\Signup.aspx.cs">
       <DependentUpon>Signup.aspx</DependentUpon>

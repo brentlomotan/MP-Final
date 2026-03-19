@@ -11,7 +11,7 @@ namespace GROUP01_MP_Mockup.Pages.Admin
 {
 
 
-    public partial class AdminPanel
+    public partial class ProfilePage
     {
     }
 }

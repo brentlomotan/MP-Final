@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Admin Panel" Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="AdminPanel.aspx.cs" Inherits="GROUP01_MP_Mockup.Pages.Admin.AdminPanel"%>
+﻿<%@ Page Title="Profile Page" Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true" CodeBehind="AdminProfilePage.aspx.cs" Inherits="GROUP01_MP_Mockup.Pages.Admin.ProfilePage" %>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <style>

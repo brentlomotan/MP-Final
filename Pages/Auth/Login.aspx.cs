@@ -40,7 +40,8 @@ namespace GROUP01_MP_Mockup.Pages.Auth
                         {
                             Session["User"] = reader["UserID"];
                             Session["Role"] = reader["UserType"].ToString();
-                        } else
+                        }
+                        else
                         {
                             lblLoginMessage.Visible = true;
                         }
@@ -55,7 +56,7 @@ namespace GROUP01_MP_Mockup.Pages.Auth
                     {
                         if (Session["Role"].ToString() == "User")
                         {
-                            Response.Redirect("~/Pages/User/User.aspx");
+                            Response.Redirect("~/Pages/Users/UserDashboard.aspx");
                         }
                         else if (Session["Role"].ToString() == "Admin")
                         {

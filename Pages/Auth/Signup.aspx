@@ -63,10 +63,31 @@
     <div style="text-align: center" class="signup-form fade-container">
         <h1>CREATE AN ACCOUNT</h1>
 
-        <asp:TextBox ID="txtUsername" runat="server" Height="50px" Width="300px" placeholder="Username" CssClass="rounded-input"></asp:TextBox>
         <asp:TextBox ID="txtFirstName" runat="server" Height="50px" Width="300px" placeholder="First Name" CssClass="rounded-input"></asp:TextBox>
         <asp:TextBox ID="txtLastName" runat="server" Height="50px" Width="300px" placeholder="Last Name" CssClass="rounded-input"></asp:TextBox>
         <asp:TextBox ID="txtAddress" runat="server" Height="50px" Width="300px" placeholder="Home Address" CssClass="rounded-input"></asp:TextBox>
+
+        <asp:DropDownList ID="ddlBarangay" runat="server" Height="50px" Width="300px" CssClass="rounded-input">
+            <asp:ListItem Value="" Text="--- SELECT BARANGAY ---" />
+            <asp:ListItem Value="C101" Text="Baclaran" />
+            <asp:ListItem Value="C102" Text="Banay-Banay" />
+            <asp:ListItem Value="C103" Text="Banlic" />
+            <asp:ListItem Value="C104" Text="Bigaa" />
+            <asp:ListItem Value="C105" Text="Butong" />
+            <asp:ListItem Value="C106" Text="Casile" />
+            <asp:ListItem Value="C107" Text="Diezmo" />
+            <asp:ListItem Value="C108" Text="Gulod" />
+            <asp:ListItem Value="C109" Text="Mamatid" />
+            <asp:ListItem Value="C110" Text="Marinig" />
+            <asp:ListItem Value="C111" Text="Niugan" />
+            <asp:ListItem Value="C112" Text="Pulo" />
+            <asp:ListItem Value="C113" Text="Sala" />
+            <asp:ListItem Value="C114" Text="San Isidro" />
+            <asp:ListItem Value="C115" Text="Barangay Uno" />
+            <asp:ListItem Value="C116" Text="Barangay Dos" />
+            <asp:ListItem Value="C117" Text="Barangay Tres" />
+        </asp:DropDownList>
+
         <asp:TextBox ID="txtPassword" runat="server" Height="50px" Width="300px" placeholder="Password" TextMode="Password" CssClass="rounded-input"></asp:TextBox>
         <asp:TextBox ID="txtConfirmPassword" runat="server" Height="50px" placeholder="Confirm Password" Width="300px" TextMode="Password" CssClass="rounded-input"></asp:TextBox>
 
@@ -80,7 +101,6 @@
     <script>
         function validateForm() {
             var fieldIds = [
-            '<%= txtUsername.ClientID %>',
             '<%= txtFirstName.ClientID %>',
             '<%= txtLastName.ClientID %>',
             '<%= txtAddress.ClientID %>',
@@ -116,6 +136,21 @@
                     lbl.style.display = 'inline';
                 } else {
                     lbl.style.display = 'none';
+                }
+            }
+
+            var ddl = document.getElementById('<%= ddlBarangay.ClientID %>');
+            if (ddl) {
+                ddl.classList.remove('input-error');
+                if (ddl.value === '') {
+                    ddl.classList.add('input-error');
+                    isValid = false;
+
+                    ddl.addEventListener('change', function () {
+                        if (ddl.value !== '') {
+                            ddl.classList.remove('input-error');
+                        }
+                    }, { once: true });
                 }
             }
 

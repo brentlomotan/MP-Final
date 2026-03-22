@@ -123,15 +123,6 @@ namespace GROUP01_MP_Mockup.Pages.Users
         protected global::System.Web.UI.WebControls.Label lblUserID;
 
         /// <summary>
-        /// btnViewAnalytics control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnViewAnalytics;
-
-        /// <summary>
         /// lblCountUnpaid control.
         /// </summary>
         /// <remarks>

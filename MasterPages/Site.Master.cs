@@ -30,12 +30,12 @@ namespace GROUP01_MP_Mockup
                 HomeTab.Attributes["class"] += " active";
             }
 
-            if (path.Contains("fullareaanalytics"))
+            if (path.Contains("analytics"))
             {
                 ProjectsTab.Attributes["class"] += " active";
             }
 
-            if (path.Contains("user"))
+            if (path.Contains("userdashboard") || path.Contains("bills") || path.Contains("transactions") || path.Contains("processtransaction"))
             {
                 DashboardTab.Attributes["class"] += " active";
             }
@@ -95,10 +95,6 @@ namespace GROUP01_MP_Mockup
                 if (Session["Role"].ToString() == "Admin")
                 {
                     Response.Redirect("~/Pages/Admin/AdminProfilePage.aspx");
-                }
-                else if (Session["Role"].ToString() == "User")
-                {
-                    Response.Redirect("~/Pages/Users/UserProfilePage.aspx");
                 }
             }
         }

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%: Page.Header.Title %></title>
-    <link rel="icon" type="image/png" href="/Images/logo.png" />
+    <link rel="icon" type="image/png" href="/Images/Logo.png" />
 
     <style>
         html, body {
@@ -426,6 +426,57 @@
             background: #fdecea;
         }
 
+        /* CONTACT POPUP */
+        .contact-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0,0,0,0.35);
+            display: none;
+
+            align-items: flex-start;
+            justify-content: center;
+
+            padding-top: 120px;
+            z-index: 200;
+        }
+
+        .contact-popup {
+            background: #F7F8F0;
+            color: #355872;
+            padding: 25px 30px;
+            border-radius: 10px;
+
+            width: 400px;
+            text-align: center;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .contact-popup h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .contact-popup button {
+            margin-top: 15px;
+            padding: 6px 14px;
+
+            border: none;
+            background: #7AAACE;
+            color: white;
+
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-popup button:hover {
+            background: #84b7dd;
+        }
+
         /* PAGE CONTENT */
         .content {
             padding: 30px;
@@ -482,7 +533,7 @@
             <div class="header-nav-links">
                 <a href="~/Pages/Auth/Signup.aspx" runat="server">Register</a>
                 <a href="~/Pages/Landing/Default.aspx" runat="server">About Us</a>
-                <a href="~/Pages/Auth/Signup.aspx" runat="server">Contact Us</a>
+                <a href="javascript:void(0);" onclick="openContactPopup()">Contact Us</a>
             </div>
 
             <!-- RIGHT SIDE - LOGIN/PROFILE -->
@@ -591,6 +642,20 @@
 
             </div>
         </footer>
+
+        <!-- CONTACT OVERLAY -->
+        <div id="contactOverlay" class="contact-overlay">
+            <div class="contact-popup">
+                <h3>Contact Us</h3>
+                <p>You can reach us at:</p>
+                <p><b>
+                    Phone: (049) 832-1620 <br />
+                    Email: cabuyaowaterdistrict@gmail.com
+                </b></p>
+
+                <button type="button" onclick="closeContactPopup()">Close</button>
+            </div>
+        </div>
     </form>
 
     <script>
@@ -606,6 +671,15 @@
                 wrapper.classList.remove('open');
             }
         });
+
+        // Contact Popup Functions
+        function openContactPopup() {
+            document.getElementById("contactOverlay").style.display = "flex";
+        }
+
+        function closeContactPopup() {
+            document.getElementById("contactOverlay").style.display = "none";
+        }
     </script>
 </body>
 </html>

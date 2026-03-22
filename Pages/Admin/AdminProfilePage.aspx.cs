@@ -48,5 +48,11 @@ namespace GROUP01_MP_Mockup.Pages.Admin
             ClientScript.RegisterStartupScript(GetType(), "Toast",
                 "document.getElementById('toast').classList.add('show');setTimeout(function(){document.getElementById('toast').classList.remove('show');},3000);", true);
         }
+
+        protected void btnLogoutProfile_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("~/Pages/Landing/Default.aspx");
+        }
     }
 }

@@ -5,7 +5,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap');
     :root { --ink:#1e3444; --mid:#355872; --sky:#AED3EF; --paper:#F7F8F0; --mute:rgba(53,88,114,0.38); --line:rgba(53,88,114,0.1); }
 
-    main { margin-top:0; background:#eaf2f9; min-height:100vh; width:calc(100% + 60px); margin-left:-30px; }
+    main { margin-top:0; background:#AED3EF; min-height:100vh; width:calc(100% + 60px); margin-left:-30px; }
 
     .topbar { background:var(--ink); padding:2.5rem 3.5rem; display:flex; align-items:center; justify-content:space-between; }
     .topbar h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(2rem,4vw,3rem); color:var(--paper); margin:0; line-height:1; }
@@ -21,22 +21,22 @@
 
     .card { background:var(--paper); border-radius:0.85rem; border:1px solid rgba(174,211,239,0.35); box-shadow:0 1px 3px rgba(30,52,68,0.04),0 4px 16px rgba(30,52,68,0.06); overflow:hidden; }
     .card-head { padding:1rem 1.5rem; border-bottom:1px solid var(--line); }
-    .card-title { font-family:'DM Sans',sans-serif; font-size:0.58rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--mute); }
+    .card-title { font-family:'DM Sans',sans-serif; font-size:0.58rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink); }
     .card-body { padding:1.5rem; }
 
     .field-list { display:flex; flex-direction:column; gap:0.85rem; }
     .field { display:flex; flex-direction:column; gap:0.28rem; }
-    .flabel { font-family:'DM Sans',sans-serif; font-size:0.57rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--mute); }
-    .fval { font-family:'DM Sans',sans-serif; font-size:0.88rem; font-weight:500; color:var(--ink); padding:0.55rem 0.75rem; background:rgba(174,211,239,0.1); border:1px solid var(--line); border-radius:0.5rem; }
-    .fval.dim { color:var(--mute); font-weight:400; }
+    .flabel { font-family:'DM Sans',sans-serif; font-size:0.57rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink); }
+    .fval { font-family:'DM Sans',sans-serif; font-size:0.88rem; font-weight:500; color:var(--ink); padding:0.55rem 0.75rem; background:rgba(53,88,114,0.08); border:1px solid var(--line); border-radius:0.5rem; }
+    .fval.dim { color:var(--ink); font-weight:400; }
 
     .slist { display:flex; flex-direction:column; }
     .srow { display:flex; align-items:center; justify-content:space-between; padding:0.8rem 0; gap:1rem; border-bottom:1px solid var(--line); }
     .srow:last-child { border-bottom:none; }
     .srow:first-child { padding-top:0; }
     .srow-title { font-family:'DM Sans',sans-serif; font-size:0.84rem; font-weight:500; color:var(--ink); }
-    .srow-desc { font-family:'DM Sans',sans-serif; font-size:0.7rem; color:var(--mute); margin-top:0.1rem; }
-    .glabel { font-family:'DM Sans',sans-serif; font-size:0.57rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--mute); margin:0 0 0.65rem; }
+    .srow-desc { font-family:'DM Sans',sans-serif; font-size:0.7rem; color:var(--ink); margin-top:0.1rem; }
+    .glabel { font-family:'DM Sans',sans-serif; font-size:0.57rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink); margin:0 0 0.65rem; }
     .ssec { display:flex; flex-direction:column; gap:1.25rem; }
     .ssec + .ssec { margin-top:1.25rem; padding-top:1.25rem; border-top:1px solid var(--line); }
 
@@ -77,16 +77,21 @@
               <div class="field-list">
                <div class="field">
                <span class="flabel">User ID</span>
-              <div class="fval dim" id="dispUID">—</div>
+              <div class="fval" id="dispUID">—</div>
        </div>
              <div class="field">
            <span class="flabel">Role</span>
                 <div class="fval" id="dispRole">—</div>
            </div>
            </div>
+           <div class="btn-row" style="border-top:1px solid var(--line); margin-top:1rem; padding-top:1rem;">
+               <asp:LinkButton ID="btnLogoutProfile" runat="server" CssClass="btn" style="background:transparent; color:#c0392b; border-color:rgba(192,57,43,0.3);" OnClick="btnLogoutProfile_Click">Logout</asp:LinkButton>
+           </div>
          </div>
         </div>
 
+    </div>
+</main>
        
 
 <script>

@@ -55,7 +55,6 @@ namespace GROUP01_MP_Mockup
                 if (role == "User")
                 {
                     pnlUserLinks.Visible = true;
-                    pnlHomeTab.Visible = false;
                     pnlDashboardTab.Visible = true;
                 }
 

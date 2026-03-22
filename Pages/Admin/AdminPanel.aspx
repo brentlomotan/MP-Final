@@ -21,7 +21,7 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        width: 100vw;
+        width: 100%;
         padding-top: 24px;
     }
 
@@ -30,11 +30,11 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        width: 100vw;
+        width: 100%;
     }
 
     .card {
-        background-color: #46a4c7;
+        background-color: #f7f8f0;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
         width: 85vw;
@@ -177,13 +177,13 @@
     }
 
     .ProjectCard{
-        background: #46a4c7;
+        background: #f7f8f0;
         border-radius: 2px;
         padding: 2px;
     }
 
     .ProjectCard:hover{
-        background: rgba(52, 121, 147, 0.3);
+        background: rgb(158, 169, 168, 0.10);
     }
 
     .h3{
@@ -214,7 +214,7 @@
 <main>
     <div class="container">
         <div class="card">
-            <h1 style="color: white; padding-left: 20px; margin-bottom: 20px; font-size: 32px;">Pending Accounts</h1>
+            <h1 style="color: #162732; padding-left: 20px; margin-bottom: 20px; font-size: 32px;">Pending Accounts</h1>
             <div class="table-div">
                 <table class="approval-table">
                     <thead>
@@ -251,7 +251,7 @@
 <div class="container3">
     <div class="card">
         <div class="Card3Header">
-            <h1 style="color: white; padding-left: 20px; margin-bottom: 20px; font-size: 32px;">Manage Announcements</h1>
+            <h1 style="color: #162732; padding-left: 20px; margin-bottom: 20px; font-size: 32px;">Manage Announcements</h1>
             <button type="button" class="btn-add-project" onclick="toggleAnnForm()">+ Add Announcement</button>
         </div>
 

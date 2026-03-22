@@ -24,31 +24,58 @@ namespace GROUP01_MP_Mockup.Pages.Admin
         protected global::System.Web.UI.WebControls.Repeater PendingSet;
 
         /// <summary>
-        /// btnAddNewProject control.
+        /// hdnAnnID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddNewProject;
+        protected global::System.Web.UI.WebControls.HiddenField hdnAnnID;
 
         /// <summary>
-        /// ProjectsRepeater control.
+        /// txtAnnTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater ProjectsRepeater;
+        protected global::System.Web.UI.WebControls.TextBox txtAnnTitle;
 
         /// <summary>
-        /// btnAddNewAnnouncement control.
+        /// ddlAnnCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddNewAnnouncement;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAnnCategory;
+
+        /// <summary>
+        /// txtAnnDesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAnnDesc;
+
+        /// <summary>
+        /// btnSaveAnn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveAnn;
+
+        /// <summary>
+        /// lblAnnMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAnnMsg;
 
         /// <summary>
         /// AnnouncementsRepeater control.
@@ -85,5 +112,14 @@ namespace GROUP01_MP_Mockup.Pages.Admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnClose;
+
+        /// <summary>
+        /// hdnAnnFormOpen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnAnnFormOpen;
     }
 }

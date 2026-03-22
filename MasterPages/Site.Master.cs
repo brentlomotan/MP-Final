@@ -57,15 +57,13 @@ namespace GROUP01_MP_Mockup
                     pnlUserLinks.Visible = true;
                     pnlDashboardTab.Visible = true;
                 }
-
                 if (role == "Admin")
                 {
                     HomeTabText.InnerText = "Admin Dashboard";
                     HomeTab.HRef = "~/Pages/Admin/AdminPanel.aspx";
-                    ProjectsTab.HRef = "~/Pages/Admin/FullAreaAnalytics.aspx";
-                    ProjectsTabText.InnerText = "Full Area Analytics";
+                    ProjectsTabText.InnerText = "Projects";
+                    ProjectsTab.HRef = "~/Pages/Projects/Projects.aspx";
                 }
-
                 if (!IsPostBack)
                 {
                     if (role == "Admin" && path.Contains("default"))
@@ -73,11 +71,11 @@ namespace GROUP01_MP_Mockup
                     else if (role == "User" && path.Contains("default"))
                         Response.Redirect("~/Pages/Users/UserDashboard.aspx");
                 }
-                else
-                {
-                    pnlLogin.Visible = true;
-                    pnlProfile.Visible = false;
-                }
+            }
+            else
+            {
+                pnlLogin.Visible = true;
+                pnlProfile.Visible = false;
             }
         }
 

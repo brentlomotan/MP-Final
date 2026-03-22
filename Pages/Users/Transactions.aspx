@@ -3,8 +3,6 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <style>
-        .footer { display: none !important; }
-
         .txn-wrap {
             margin-top: 0;
             width: calc(100% + 60px);
